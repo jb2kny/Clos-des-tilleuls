@@ -12,7 +12,7 @@
 </head>
 <body>
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" style="background-image: linear-gradient(135deg, rgba(40,55,35,0.55), rgba(70,96,61,0.45)), url('https://a0.muscache.com/im/pictures/prohost-api/Hosting-1110065343510003006/original/6e092815-cb12-45e9-a1d1-d0d4d1980ce1.jpeg?im_w=1920'); background-size: cover; background-position: center;">
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <span class="hero__eyebrow">Logement entier · Francueil, Touraine</span>
@@ -58,6 +58,22 @@
         <span class="fact__value">Piscine</span>
         <span class="fact__label">privative (en saison)</span>
       </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section gallery">
+    <div class="container">
+      <h2 class="section__title">Le gîte en images</h2>
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--featured">
+          <img src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1110065343510003006/original/6e092815-cb12-45e9-a1d1-d0d4d1980ce1.jpeg?im_w=1920" alt="Vue du Clos des Tilleuls" loading="lazy" onclick="openLightbox(this)" />
+        </figure>
+        <figure class="gallery__item">
+          <img src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1110065343510003006/original/52fe226d-373c-4cf4-83bd-9c42fc213fa9.jpeg?im_w=1920" alt="Intérieur du Clos des Tilleuls" loading="lazy" onclick="openLightbox(this)" />
+        </figure>
+      </div>
+      <p class="gallery__hint">Cliquez sur une photo pour l'agrandir.</p>
     </div>
   </section>
 
@@ -298,5 +314,29 @@
       <p>Ce site présente l'annonce et redirige vers Airbnb pour la réservation : <a href="https://www.airbnb.fr/rooms/1110065343510003006" target="_blank" rel="noopener noreferrer">voir l'annonce originale</a>.</p>
     </div>
   </footer>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
+    <span class="lightbox__close" aria-label="Fermer">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightbox-img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('lightbox--open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      var lb = document.getElementById('lightbox');
+      lb.classList.remove('lightbox--open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
