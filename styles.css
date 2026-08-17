@@ -293,6 +293,21 @@ body {
 .room p {
   color: var(--text-soft);
   font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.room__floor {
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.room__extra {
+  font-size: 0.85rem;
+  font-style: italic;
 }
 
 /* Amenities */
