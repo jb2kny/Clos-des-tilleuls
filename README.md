@@ -17,7 +17,23 @@ https://www.airbnb.fr/rooms/1110065343510003006
 
 Ce site est statique : il peut être hébergé sur GitHub Pages, Netlify, Vercel ou tout autre hébergeur de fichiers statiques. Aucune dépendance ni build n'est nécessaire.
 
-Pour un aperçu local :
+### Publication automatique (GitHub Pages)
+
+Un workflow GitHub Actions (`.github/workflows/deploy.yml`) publie automatiquement le site sur GitHub Pages à chaque push sur la branche `main`.
+
+Une fois la PR fusionnée, le site est accessible à l'adresse :
+
+```
+https://jb2kny.github.io/Clos-des-tilleuls/
+```
+
+### Pré-requis (une seule fois)
+
+Activer GitHub Pages en mode *GitHub Actions* :
+
+**Settings → Pages → Build and deployment → Source : GitHub Actions**
+
+### Aperçu local
 
 ```bash
 python3 -m http.server 8000
